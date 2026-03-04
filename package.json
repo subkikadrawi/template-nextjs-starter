@@ -10,26 +10,29 @@
     "prisma:generate": "prisma generate",
     "prisma:seed": "node prisma/seed.js",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf node_modules .next dist"
   },
   "dependencies": {
+    "@prisma/client": "^6.13.0",
     "axios": "^1.5.0",
-    "bcrypt": "^5.1.0",
-    "cookie": "^0.5.0",
+    "bcrypt": "^6.0.0",
+    "cookie": "^1.1.1",
     "jsonwebtoken": "^9.0.0",
-    "next": "14.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sweetalert2": "^11.7.1",
-    "@prisma/client": "4.20.0"
+    "next": "^16.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sweetalert2": "^11.7.1"
   },
   "devDependencies": {
-    "prisma": "4.20.0",
-    "tailwindcss": "4.0.0",
-    "postcss": "8.4.0",
-    "autoprefixer": "10.4.0",
-    "typescript": "5.5.0",
-    "eslint": "8.0.0",
-    "eslint-config-next": "14.0.0"
+    "@types/node": "25.3.3",
+    "@types/react": "19.2.14",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6",
+    "postcss": "^8.4.0",
+    "prisma": "^6.13.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.5.0"
   }
 }
