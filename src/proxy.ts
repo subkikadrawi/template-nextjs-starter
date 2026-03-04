@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev_secret'
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl
   if (pathname.startsWith('/dashboard')) {
     const token = req.cookies.get('access_token')?.value
