@@ -1,4 +1,4 @@
-import './styles/globals.css'
+import '@/styles/globals.css'
 import Navbar from '@/components/Navbar'
 
 export const metadata = { title: process.env.NEXT_PUBLIC_APP_URL || 'MyApp' }
