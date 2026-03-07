@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 
 export default async function Dashboard() {
   const c = cookies()
-  const token = c.get('access_token')?.value
+  const token = (await c).get('access_token')?.value
   if (!token) redirect('/login')
 
   return (

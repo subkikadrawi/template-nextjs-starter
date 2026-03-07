@@ -2,17 +2,18 @@ import { NextResponse } from 'next/server'
 
 export function setAuthCookies(res: NextResponse, accessToken: string, refreshToken: string) {
   const secure = (process.env.COOKIE_SECURE === 'true') || (process.env.NODE_ENV === 'production')
+  const sameSite = (process.env.COOKIE_SAMESITE as 'lax' | 'strict' | 'none') || 'strict'
   res.cookies.set('access_token', accessToken, {
     httpOnly: true,
     secure,
-    sameSite: process.env.COOKIE_SAMESITE || 'Strict',
+    sameSite,
     path: '/',
     maxAge: 60 * 15 // 15 min
   })
   res.cookies.set('refresh_token', refreshToken, {
     httpOnly: true,
     secure,
-    sameSite: process.env.COOKIE_SAMESITE || 'Strict',
+    sameSite,
     path: '/api/auth/refresh',
     maxAge: 60 * 60 * 24 * 7 // 7 days
   })
